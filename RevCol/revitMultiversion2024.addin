@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<!-- Application -->
+	<AddIn Type="Application">
+		<Name>RevitMultiversin2024_app</Name>
+		<Assembly>revitMultiversin2024.dll</Assembly>
+		<FullClassName>revitMultiversin2025.App</FullClassName>
+		<ClientId>17E0D0BF-98A9-49A6-A0ED-6EE91F30D2A8</ClientId>
+		<VendorId>AXEL</VendorId>
+		<VendorDescription>Multiversion Addin Example</VendorDescription>
+	</AddIn>
+
+	<!-- Optional Command -->
+	<AddIn Type="Command">
+		<Name>RevitMultiversin2024_MyCommand</Name>
+		<Assembly>revitMultiversin2024.dll</Assembly>
+		<FullClassName>revitMultiversin2025.Command</FullClassName>
+		<ClientId>C55D3931-49D2-454B-9AAA-584E4E7DDAA7</ClientId>
+		<VendorId>AXEL</VendorId>
+		<VendorDescription>Multiversion Addin Example</VendorDescription>
+	</AddIn>
+</RevitAddIns>
+ 

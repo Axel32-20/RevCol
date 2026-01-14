@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevCol", "RevCol\RevCol.csproj", "{8A8F59A4-9558-4E7F-9D08-E68621C8889E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2024|Any CPU = 2024|Any CPU
+		2025|Any CPU = 2025|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.2024|Any CPU.ActiveCfg = 2024|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.2024|Any CPU.Build.0 = 2024|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.2025|Any CPU.ActiveCfg = 2025|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.2025|Any CPU.Build.0 = 2025|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8F59A4-9558-4E7F-9D08-E68621C8889E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41629F4E-951D-4C6E-894E-663624C07E68}
+	EndGlobalSection
+EndGlobal

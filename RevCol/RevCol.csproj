@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
+		 
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWPF>true</UseWPF>
+		<Configurations>Debug;Release;2024;2025</Configurations>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Reference Include="RevitAPI">
+	    <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2024\RevitAPI.dll</HintPath>
+	  </Reference>
+	  <Reference Include="RevitAPIUI">
+	    <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2024\RevitAPIUI.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<!-- Referencias comunes (usamos una variable para rutas) -->
+	<ItemGroup>
+	  <None Update="revitMultiversion2024.addin">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="revitMultiversion2025.addin">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<!-- Configuración de Revit 2024 y anteriores -->
+	<Choose>
+		<!-- Revit 2025 o posterior -->
+		<When Condition="'$(Configuration)' == '2025'">
+			<PropertyGroup>
+				<TargetFramework>net8.0-windows</TargetFramework>
+				<AssemblyName>RevCol</AssemblyName>
+				<RevitVersion>2025</RevitVersion>
+				<DefineConstants>$(DefineConstants);REVIT2025_OR_LATER</DefineConstants>
+				<RevitAPIDLLPath>C:\Program Files\Autodesk\Revit 2025</RevitAPIDLLPath>
+				<OutputPath>bin\Revit2025\net8.0-windows\</OutputPath>
+				<StartProgram>$(ProgramW6432)\Autodesk\Revit 2025\Revit.exe</StartProgram>
+			</PropertyGroup>
+		</When>
+
+		<!-- Revit 2024 o anterior -->
+		<When Condition="'$(Configuration)' == '2024'">
+			<PropertyGroup>
+				<TargetFramework>net48</TargetFramework>
+				<AssemblyName>revitMultiversin2024</AssemblyName>
+				<RevitVersion>2024</RevitVersion>
+				<DefineConstants>$(DefineConstants);REVIT2024_OR_EARLIER</DefineConstants>
+				<RevitAPIDLLPath>C:\Program Files\Autodesk\Revit 2024</RevitAPIDLLPath>
+				<OutputPath>bin\Revit2024\net48\</OutputPath>
+				<StartProgram>$(ProgramW6432)\Autodesk\Revit 2024\Revit.exe</StartProgram>
+			</PropertyGroup>
+		</When>
+
+		<!-- Configuración por defecto si no es ni 2025 ni 2024 -->
+		<Otherwise>
+			<PropertyGroup>
+				<TargetFramework>net48</TargetFramework>
+				<AssemblyName>revitMultiversin2024</AssemblyName>
+				<RevitVersion>2024</RevitVersion>
+				<DefineConstants>$(DefineConstants);REVIT2024_OR_EARLIER</DefineConstants>
+				<OutputPath>bin\Revit2024\net48\</OutputPath>
+				<StartProgram>$(ProgramW6432)\Autodesk\Revit 2024\Revit.exe</StartProgram>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
+	
+	
+	 
+
+</Project>
